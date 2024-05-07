@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambassador</title>
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            width: 500px;
+        }
+
+        h1 {
+            color: linear-gradient(to left, #00ff0d, #ff0000);  
+              }
+
+        body {
+            background: linear-gradient(to right, #04139e, #01062e);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: linear-gradient(to right, #04139e, #01062e);
+            overflow: hidden;
+            color: #fff;
+            box-shadow: linear-gradient(to left, #04139e, #010635);
+        }
+        .navbar-brand {
+            float: left;
+            padding: 15px 20px;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        .navbar-tabs {
+            float: right;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-tabs a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .navbar-tabs a:hover {
+            color: #ffd700;
+        }
+        .fullscreen-dropdown {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh; /* Set height to cover entire viewport height */
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+        .fullscreen-dropdown.active {
+            display: block;
+        }
+        .dropdown-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right,#040e68, #01062e);
+            padding: 20px;
+            color: #fff;
+        }
+        .dropdown-content a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+        }
+
+        .container {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+  }
+
+  .image {
+    flex: 1; /* Take up 50% of the container */
+    max-width: 50%; /* Set maximum width */
+  }
+
+  .text {
+    flex: 1; /* Take up 50% of the container */
+    max-width: 50%; /* Set maximum width */
+    padding: 0 20px; /* Add some spacing between the image and text */
+  }
+
+  /* Optional: Adjust styles for better appearance */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+  }
+
+   h2 {
+    color: #fff;
+   }
+
+    p {
+        color: #fff;
+    }
+
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div style="font-size: 30px;" class="navbar-brand">O B L F C</div>
+    <div class="navbar-tabs">
+        <a href="index.html" style="font-size: 25px;">Home</a>
+        <div class="about-dropdown">
+            <a href="#" style="font-size: 25px;" class="about-link">About</a>
+            <div class="fullscreen-dropdown" id="aboutDropdown">
+                <div class="dropdown-content">
+                    <a href="Tickets.html">Tickets</a>
+                    <a href="players.html">Players</a>
+                    <a href="ambassador.html">Brand Ambassador</a>
+                    <a href="stadium.html">Home Stadium</a>
+                    
+                    <a href="Partners.html">Brand partners</a>
+                    <a href="Our Story.html">Our Story</a>
+                    <a href="Gallery.html">Gallery</a>
+                    <a href="contact us.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const aboutDropdown = document.getElementById('aboutDropdown');
+    const aboutLink = document.querySelector('.about-link');
+
+    aboutLink.addEventListener('mouseenter', function() {
+        aboutDropdown.classList.add('active');
+    });
+
+    aboutDropdown.addEventListener('mouseleave', function() {
+        aboutDropdown.classList.remove('active');
+    });
+</script>
+<h1 style="color: #fff; font-family: sans-serif; text-align: center; font-size: 40px;">O B L F C</h1>
+<div class="container">
+    <div class="image">
+      <img style="margin: 25%;" src="data:image/jpeg;base64,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" alt="Sample Image">
+    </div>
+    <div class="text">
+      <h2>Donald J.Trump</h2>
+      <p>O B L F C    Ambassador</p>
+    </div>
+  </div>
+  
+
+
+</body>
+</html>
